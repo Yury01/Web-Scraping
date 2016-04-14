@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+	background-color: #ddd;
+}
+#wrapper {
+    height: auto;
+    margin: 0 auto;
+	padding:0;
+    background-color: white;
+    -webkit-box-shadow: 0 0 2px #666; 
+    box-shadow: 0 0 2px #666; -moz-box-shadow: 0 0 2px #666;
+	font: 16px sans-serif;
+}
+
+#page-title {
+  color: #666666;
+  background-color: #f8f8f8;
+  font-size: 32px;
+  line-height: 1.35;
+  padding: 20px 0;
+  text-align: center;
+  text-shadow: 0 1px 1px white;
+}
+
+.page-header {
+	margin: 5px
+}
+
+.post {
+	margin: 5px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.left {
+	float: left;
+	padding: 5px;
+	font: 12px sans-serif
+}
+
+#footer {
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-right: 10px;
+	margin-left: 10px;
+    margin-top: 10px;
+	padding-left: 20px;
+	font: 15px sans-serif;
+}
