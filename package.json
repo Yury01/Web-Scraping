@@ -1,0 +1,35 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "web appication",
+  "main": "app.js",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.13.4",
+    "iconv-lite": "^0.4.13",
+    "mongoose": "^4.4.16",
+    "morgan": "^1.7.0",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yury01/Web-Scraping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yury01/Web-Scraping/issues"
+  },
+  "homepage": "https://github.com/Yury01/Web-Scraping#readme"
+}
