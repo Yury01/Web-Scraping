@@ -68,12 +68,12 @@ module.exports = {
 
                         var text = $('div .content').html();
 
-                        var news = News.findOne({title: titles[i]}, function(err, news) {
+                        var news = News.findOne({URI: uri[i]}, function(err, news) {
                             if (!news) {
                                 cache = new News({ newsId: newsId[i], URI: uri[i], title: titles[i],
                                 image: imgname[i], newsShort: stext[i], newsFull: text, datePublisher: date[i] });
                                 cache.save(function(err) {
-                                    if (err) {console.log(err);}
+                                    if (err) {console.log('');}
                                     //saved!
                                 });
                             }

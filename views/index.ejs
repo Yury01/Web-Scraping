@@ -4,17 +4,18 @@
 <% block('header', user.local.login) -%>
 <% } %>
 
+<h1 id="page-title">Новости</h1>
 
 <% for(var i in news) {%>
 
-	<div class="col-xs-12 post">
+	<div class="row post">
 		<div class="col-xs-5">
 			<div>
 			<img src="/image/<%= news[i].image %>" >
 			</div>
-			<div class="left"><%= news[i].datePublisher %></div>
 		</div>
 		<div class="col-xs-7">
+			<div class="dtinfo"><%= news[i].datePublisher %></div>
 			<h3 class="page-header"><a href="/view/<%= news[i].newsId %>"><%= news[i].title %></a></h3>
 			<p><%= news[i].newsShort %></p>
 		</div>
@@ -31,4 +32,4 @@
 		    <li><a href="/page/<%= i %>"><%= i %></a></li>
 	<% } }%>
 	</ul>
-	</div>
+</div>

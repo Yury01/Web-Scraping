@@ -1,27 +1,37 @@
 <% layout("main") %>
 
-    <div class="col-sm-8 col-sm-offset-2">
-      <div class="jumbotron text-center">
-        <h1><span class="lyphicon glyphicon-pencil"></span> Регистрация</h1>
+<h2 class="page-header ctr">Регистрация</h2>
 
-        <% if (message != null) { %>
-          <div class="alert-danger"><%= message %></div>
-        <% } %>
+  <div class="col-md-6 col-md-offset-3">
+      <p class="lead ctr">Пожалуйста, введите ваши данные</p>
+      <% if (message != null) { %>
+        <div class="alert-danger"><%= message %></div><br/>
+      <% } %>
+      <form class="form-horizontal" role="form" action="/signup" method="post">
+          <fieldset>
 
-        <form action="/signup" method="post">
           <div class="form-group">
-              <label>Логин</label>
-              <input type="text" class="form-control" name="login">
+              <label class="col-sm-4 control-label" for="textinput">Логин</label>
+              <div class="col-sm-7">
+                  <input type="text" placeholder="Логин" class="form-control" name="login">
+              </div>
           </div>
-          <div class="form-group">
-            <label>Пароль</label>
-            <input type="password" class="form-control" name="password" />
+
+        <div class="form-group">
+              <label class="col-sm-4 control-label" for="textinput">Пароль</label>
+              <div class="col-sm-7">
+                  <input type="password" placeholder="Пароль" class="form-control" name="password">
+              </div>
           </div>
-          <div>
-            <input type="submit" class="form-control" value="Submit" />
+
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+              <div class="pull-right">
+                  <button type="submit" class="btn btn-primary">Сохранить</button>
+              </div>
           </div>
-        </form>
-      </div>
-      <hr>
-      <p><a href="/">Главная</a>.</p>
-    </div>
+        </div>
+
+        </fieldset>
+     </form>
+  </div><!-- /.col-lg-12 -->

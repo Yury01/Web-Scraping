@@ -1,15 +1,23 @@
 body {
-    margin: 0;
-    padding: 0;
-	background-color: #ddd;
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
 }
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1030px;
+  }
+}
+
 #wrapper {
-    height: auto;
-    margin: 0 auto;
+  height: auto;
+  margin: 0 auto;
 	padding:0;
-    background-color: white;
-    -webkit-box-shadow: 0 0 2px #666; 
-    box-shadow: 0 0 2px #666; -moz-box-shadow: 0 0 2px #666;
+  background-color: white;
+  -webkit-box-shadow: 0 0 2px #666; 
+  box-shadow: 0 0 2px #666; -moz-box-shadow: 0 0 2px #666;
 	font: 16px sans-serif;
 }
 
@@ -21,31 +29,63 @@ body {
   padding: 20px 0;
   text-align: center;
   text-shadow: 0 1px 1px white;
+  margin: 1px 15px 10px;
 }
 
 .page-header {
-	margin: 5px
+	margin: 20px
 }
 
 .post {
-	margin: 5px;
+	margin: 5px 15px 20px;
 	padding-left: 10px;
-	margin-bottom: 20px;
+  padding-bottom: 10px;
 	border-bottom: 1px solid #e0e0e0;
 }
 
-.left {
-	float: left;
-	padding: 5px;
-	font: 12px sans-serif
+.ctr {
+  text-align: center;
 }
 
+.right {
+	float: right;
+	padding: 5px;
+}
+
+.dtinfo {
+  margin: -5px 0 10px 0;
+  font-size: 15px;
+  padding: 5px 5px 10px; 
+}
+
+.content-box {
+  margin: 20px 10px;
+  font-size: 17px;
+}
+
+.text {
+  margin-bottom: 20px
+}
+
+.comment {
+  margin: 10px 25px 10px;
+  padding: 10px 20px 1px;
+}
+
+.col{
+  padding: 15px; 
+  line-height: 20px;
+  border-bottom: 1px dotted #bebebe;
+  margin: 0 0 10px;
+ background-color: #F3F3F3; }
+
+
 #footer {
-    border-top: 1px solid #e0e0e0;
-    padding: 10px;
-    margin-right: 10px;
+  border-top: 1px solid #e0e0e0;
+  padding: 10px;
+  margin-right: 10px;
 	margin-left: 10px;
-    margin-top: 10px;
+  margin-top: 10px;
 	padding-left: 20px;
 	font: 15px sans-serif;
 }

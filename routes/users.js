@@ -40,7 +40,7 @@ router.post('/login', passport.authenticate('local-login', {
 router.post('/comment/:id', isLoggedIn, function(req, res, next) {
     //console.log(req.body);
     var text = req.body.comment;
-    var user = req.user.local.email;
+    var user = req.user.local.login;
     var newComment = new Comment();
     newComment.comment = text;
     newComment.newsId = req.params.id;

@@ -1,27 +1,32 @@
 <% layout("main") %>
-    <div class="col-sm-8 col-sm-offset-2">
-      <div class="jumbotron text-center">
-        <h1><span class="glyphicon glyphicon-user"></span> Вход</h1>
 
-        <% if (message != null) { %>
-        	<div class="alert-danger"><%= message %></div>
-        <% } %>
+<h2 class="page-header ctr">Авторизация</h2>
 
-        <form action="/login" method="post">
-          <div class="form-group">
-              <label>Логин</label>
-              <input type="text" class="form-control" name="login">
-          </div>
-          <div class="form-group">
-            <label>Пароль</label>
-            <input type="password" class="form-control" name="password" />
-          </div>
-          <div>
-            <input type="submit" class="form-control" value="Submit" />
-          </div>
-        </form>
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-default login-panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">Пожалуйста, войдите</h3>
       </div>
-      <hr>
-      <span class="fa fa-sign-in"> Нет аккаунта? <a href="/signup"> Регистрация</a></span>
-      <p><a href="/">Главная</a>.</p>
+    <div class="panel-body">
+            <% if (message != null) { %>
+          <div class="alert-danger"><%= message %></div>
+        <% } %>        
+    <form action="/login" method="post">
+    <fieldset>
+      <div class="form-group">
+        <label>Логин</label>
+        <input class="form-control" placeholder="Логин" name="login" type="text">
+      </div>
+      <div class="form-group">
+          <label>Пароль</label>
+          <input class="form-control" placeholder="Пароль" name="password" type="password" value="">
+      </div>
+      <input class="btn btn-lg btn-primary btn-block" type="submit" value="Вход" />
+    </fieldset>
+    </form>
     </div>
+    </div>
+ </div>
+
+<div class="col-md-4 col-md-offset-4"> Нет аккаунта? <a href="/signup"> Регистрация</a></div>
+      
