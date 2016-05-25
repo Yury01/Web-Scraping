@@ -1,5 +1,9 @@
 <% layout("main") %>
 
+<% if (user) { %>
+<% block('header', user.local.email) -%>
+<% } %>
+
 <div class="col-xs-12" post>
 		<div class="col-xs-5">
 			<div>
@@ -11,8 +15,39 @@
 			<h3 class="page-header"><%= news.title %></a></h3>
 			<p>Источник: <%= news.URI %></p>
 		</div>
+		
 		<div class="col-xs-10 col-xs-offset-1">
 		<p><%= news.newsShort %></p>
 		<%- news.newsFull %>
 		</div>
+		
+		<div class="col-xs-10 col-xs-offset-1">
+		<% if (user) { %>
+		<form action="/comment/<%= news.newsId %>" method="post" role="form">
+   
+		   <div class = "form-group">
+			  <label for="name">Комментарий:</label>
+			  <textarea class="form-control" rows="3" name="comment"></textarea>
+		   </div>
+		   <div>
+            <input type="submit" class="form-control" value="Submit" />
+          </div>
+		  
+		</form>
+		<% } else { %>
+		 <a href="/login">Авторизуйтесь</a>, чтобы оставить комментарий к данной новости
+		<% }%>
+		</div>
+		
+		<% for(var i in comment) {%>
+		<br />
+		<div class="row">
+			<div class="col-xs-2 col-xs-offset-2">
+				<%= comment[i].user %>
+			</div>
+			<div class="col-xs-5 col-xs-offset-1">
+				<%= comment[i].comment %>
+			</div>
+		</div>
+		<% }%>
 </div>

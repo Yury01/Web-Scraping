@@ -1,5 +1,10 @@
 <% layout("main") %>
 
+<% if (user) { %>
+<% block('header', user.local.login) -%>
+<% } %>
+
+
 <% for(var i in news) {%>
 
 	<div class="col-xs-12 post">
@@ -10,7 +15,7 @@
 			<div class="left"><%= news[i].datePublisher %></div>
 		</div>
 		<div class="col-xs-7">
-			<h3 class="page-header"><a href="/view/<%= news[i].URN %>"><%= news[i].title %></a></h3>
+			<h3 class="page-header"><a href="/view/<%= news[i].newsId %>"><%= news[i].title %></a></h3>
 			<p><%= news[i].newsShort %></p>
 		</div>
 	</div>

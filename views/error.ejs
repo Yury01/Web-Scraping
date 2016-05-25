@@ -1,9 +1,14 @@
 <% layout("main") %>
 
 <div class="col-xs-12" post>
+<div class="text-center">
 <%= error.message %>
+<p><%=error.status%></p>
 
 <p>Извините, произошла ошибка.</p>
-
-<p><%=error.status%></p><p><%=error.message%></p>
+<p><% if(error.status == 404) {%></p>
+<img src="/image/404.png"  width="300"/>
+<% } %>
+<p><%=error.message%></p>
+</div>
 </div>

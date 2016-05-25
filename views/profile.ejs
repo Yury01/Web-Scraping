@@ -1,0 +1,19 @@
+<% layout("main") %>
+
+<% if (user) { %>
+<% block('header', user.local.login) -%>
+<% } %>
+
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="text-center">
+        <h1 class="glyphicon glyphicon-user"> Профайл</h1><br>
+        <hr>
+        <div class="jumbotron">
+          <% if (user.local.login != null) { %>
+		    <span><strong>user id</strong>: <%= user._id ? user._id : '' %></span><br>
+            <strong>Имя пользователя:</strong>: <%= user.local.login %><br>
+          <% } %>
+        </div>
+      </div>
+    </div>
+

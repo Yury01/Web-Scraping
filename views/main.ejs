@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Добро пожаловать!</title>  
+	
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   
     <!-- Bootstrap Core CSS -->
     <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +29,13 @@
 </head>
 <body>
 <div class="container" id="wrapper">
-
+<% if (blocks.header) { %>
+<span class="glyphicon glyphicon-user"></span> <%- blocks.header %> |
+<span class="glyphicon glyphicon-log-out"></span><a href="/logout"> Выход</a>
+<% } else { %>
+    <a href="/login" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Вход</a>
+    <a href="/signup" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Регистрация</a>
+<% } %>
 		<!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" id="navbar">
                 <h1 id="page-title">Новости</h1>      
@@ -40,7 +48,7 @@
 	</div>
 	
 	<div id="footer">
-		<p>&copy; Сopy 2016</p>
+		<p>Матиевский Ю. & Урбанович М. &copy; 2016</p>
 	</div>
 	
 </div>
