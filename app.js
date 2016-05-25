@@ -1,61 +1,21 @@
-/**
- * Module dependencies.
-*/
 var express = require('express');
-var http    = require('http');
-var path    = require('path');
-var engine  = require('ejs-locals');
-var logger  = require('morgan');
-var bot     = require('./bot');
+var config = require('./config/config');
+var mongoose = require('mongoose');
+var parser = require('./parser');
 
-var app    = express();
-var routes = require('./routes');
-
-// all environments
-app.set('port', process.env.PORT || 3001);
-app.engine('ejs', engine);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// Routes
-app.get('/', routes.index);
-app.get('/page/:id', routes.page);
-app.get('/view/:id', routes.view);
-app.get('/app.cache', routes.cache);
-
-app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
-
-// catch 404 and forwarding to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+mongoose.connect(config.db);
+var db = mongoose.connection;
+db.on('error', function() {
+    throw new Error('Unable to connect to database at ' + config.db);
 });
 
-// development only
-if ('development' == app.get('env')) {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
+var app = express();
 
-// production error handler
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
+parser.buildCache();
+setInterval(function() {parser.buildCache();}, 60000);
 
-bot.buildCache();
-setInterval(function() {bot.buildCache();}, 60000);
+require('./config/express')(app);
 
-http.createServer(app).listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
+app.listen(config.port, function() {
+    console.log('Express server listening on port ' + config.port);
 });

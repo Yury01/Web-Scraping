@@ -1,13 +1,12 @@
 var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
 
-var schemaNews = new Schema({
+var schemaNews = new mongoose.Schema({
     URI: {
         type: String,
         required: true,
         unique: true
     },
-    URN: {
+    newsId: {
         type: String,
         required: true,
         unique: true
@@ -23,5 +22,4 @@ var schemaNews = new Schema({
     }
 });
 
-mongoose.connect('mongodb://localhost/db_news');
 module.exports = mongoose.model('News', schemaNews);

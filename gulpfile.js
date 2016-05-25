@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 
-var jsFiles = ['*.js', 'model/*.js', 'routes/*.js']; //, 'src/**/*.js'];
+var jsFiles = ['*.js', 'config/*.js', 'models/*.js', 'routes/*.js']; //, 'src/**/*.js'];
 
 gulp.task('style', function() {
     return gulp.src(jsFiles)
